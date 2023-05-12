@@ -1,0 +1,24 @@
+name: Тестирование скрипта Михаила
+on: [push, pull_request]
+jobs:
+  tests:
+    name: Тестирование кода
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Проверка на отсутствие папок
+      run: |
+        chmod +x test_nothing.sh
+        ./test_nothing.sh
+    - name: Проверка на подачу одной папки из двух
+      run: |
+        chmod +x test_one-folder.sh
+        ./test_one-folder.sh
+    - name: Проверка на подачу не папок
+      run: |
+        chmod +x test_not-folder.sh
+        ./test_not-folder.sh
+    - name: Проверка на количество картинок
+      run: |
+        chmod +x test_pictures.sh
+        ./test_pictures.sh
