@@ -3,14 +3,11 @@ folder1=test_pic1
 folder2=test_pic2
 
 chmod +x script.sh
+mkdir $folder2
 ./script.sh $folder1 $folder2 > /dev/null
 
 pic=`ls $folder2 | wc -l`
-
-for ((i=1; i<=pic; i++))
-do
-    rm $folder2/file_$i.png
-done
+rm -rf $folder2
 
 if [[ $pic -eq 3 ]]
 then
