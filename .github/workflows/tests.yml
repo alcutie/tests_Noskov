@@ -17,7 +17,7 @@ jobs:
     - name: Проверка на подачу не папок
       run: |
         chmod +x test_not-folders.sh
-        ./test_not-folder.sh
+        ./test_not-folders.sh
     - name: Проверка на количество картинок
       run: |
         chmod +x test_pictures.sh
